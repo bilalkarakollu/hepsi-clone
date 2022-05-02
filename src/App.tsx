@@ -2,6 +2,7 @@ import React from "react";
 import { Global } from "./styled/Global";
 import { ThemeProvider } from "styled-components";
 import { Theme } from "./types/theme";
+import Home from "./pages/Home";
 
 const App = () => {
   const theme: Theme = {
@@ -23,9 +24,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <Global />
-      <div>
-        <h1>Hello World</h1>
-      </div>
+      <Home/>
     </ThemeProvider>
   );
 };
