@@ -1,0 +1,89 @@
+import styled from "styled-components";
+
+export const ImgContainer = styled.div`
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  overflow: hidden;
+  min-height: 240px;
+`;
+
+export const Img = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+
+export const Body = styled.div`
+  position: relative;
+  height: 130px;
+  padding: 14px 16px 16px;
+`;
+
+export const Title = styled.h3`
+  font-size: small;
+  font-weight: 400;
+  margin: 4px 0;
+`;
+
+export const Price = styled.span`
+  font-size: large;
+  font-weight: 600;
+  margin: 20px 0;
+`;
+
+export const BtnContainer = styled.div`
+  bottom: 2px;
+  display: block;
+  width: 100%;
+`;
+
+export const Button = styled.button`
+  display: none;
+  border: none;
+  background: #e35600;
+  color: white;
+  padding: 10px;
+  font-size: medium;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  width: 100%;
+  border-radius: 10px;
+`;
+
+export const FavContainer = styled.div`
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #e8e8e8;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  i {
+    position: absolute;
+    bottom: 9px;
+  }
+`;
+
+export const Card = styled.div`
+  position: relative;
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+  &:hover {
+    box-shadow: rgb(0 0 0 /8%) 0px 8px 32px 0px;
+
+    ${FavContainer} {
+        display: flex;
+    }
+    ${Button} {
+        display: block;
+    }
+    ${ImgContainer} {
+        border-color: white;
+    }
+  }
+`;
