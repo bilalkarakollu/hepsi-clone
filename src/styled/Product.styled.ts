@@ -18,14 +18,17 @@ export const ProductRow = styled.div`
   @media ${(props) => props.theme.media.xl} {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
-  
 `;
 
 export const ImgContainer = styled.div`
-  border: 1px solid #e6e6e6;
+border: 1px solid white;
   border-radius: 10px;
   overflow: hidden;
   min-height: 240px;
+
+  @media ${(props) => props.theme.media.lg} {
+    border: 1px solid #e6e6e6;
+  }
 `;
 
 export const Img = styled.img`
@@ -55,41 +58,59 @@ export const BtnContainer = styled.div`
   bottom: 2px;
   display: block;
   width: 100%;
-  height: 40px;
+  height: 30px;
+
+  @media ${(props) => props.theme.media.lg} {
+    height: 40px;
+  }
 `;
 
 export const Button = styled.button`
-  display: none;
-  border: none;
-  background: #e35600;
-  color: white;
+  display: block;
   padding: 0 10px;
-  font-size: medium;
-  font-weight: 600;
+  font-size: small;
+  font-weight: 500;
   cursor: pointer;
   outline: none;
   width: 100%;
   height: 100%;
   border-radius: 8px;
+  border: 1px solid lightgray;
+  color: black;
+  background-color: inherit;
+
+  @media ${(props) => props.theme.media.lg} {
+    display: none;
+    border: none;
+    background: #e35600;
+    color: white;
+    font-size: medium;
+    font-weight: 600;
+  }
 `;
 
 export const FavContainer = styled.div`
-  display: none;
+  display: flex;
   position: absolute;
   top: 20px;
   right: 20px;
-  background-color: #F1F1F1;
+  background-color: #f1f1f1;
   border-radius: 50%;
   width: 40px;
   height: 40px;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  
+
   svg {
     position: absolute;
     bottom: 7px;
     font-size: x-large;
+    color: #898989;
+  }
+
+  @media ${(props) => props.theme.media.lg} {
+    display: none;
   }
 `;
 
@@ -100,16 +121,18 @@ export const Card = styled.div`
   border-radius: 10px;
 
   &:hover {
-    box-shadow: rgb(0 0 0 /8%) 0px 8px 32px 0px;
+    @media ${(props) => props.theme.media.lg} {
+      box-shadow: rgb(0 0 0 /8%) 0px 8px 32px 0px;
 
-    ${FavContainer} {
-      display: flex;
-    }
-    ${Button} {
-      display: block;
-    }
-    ${ImgContainer} {
-      border-color: white;
+      ${FavContainer} {
+        display: flex;
+      }
+      ${Button} {
+        display: block;
+      }
+      ${ImgContainer} {
+        border-color: white;
+      }
     }
   }
 `;
