@@ -8,15 +8,27 @@ import {
   InputContainer,
   Title,
   TitleContainer,
+  FilterContainer
 } from "../../styled/Filter.styled";
 import { IoSearchOutline } from "react-icons/io5";
 import FilterItem from "./FilterItem";
 
-const Filter = () => {
+interface FilterProps {
+  title: string;
+  items?: string[];
+  onChange?: (value: string) => void;
+}
+
+const Filter = (props:FilterProps) => {
+
+  const { title, items, onChange } = props;
+
+  const [filter, setFilter] = React.useState("");
+  
   return (
-    <>
+    <FilterContainer>
       <TitleContainer>
-        <Title>Marka</Title>
+        <Title>{title}</Title>
       </TitleContainer>
       <Body>
         <InputContainer>
@@ -37,7 +49,7 @@ const Filter = () => {
           <CheckboxContainerShadow />
         </CheckboxContainer>
       </Body>
-    </>
+    </FilterContainer>
   );
 };
 

@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const FilterContainer = styled.div`
+ margin-bottom: 20px;
+ `;
+
 export const Body = styled.div`
   margin-top: 8px;
 `;
