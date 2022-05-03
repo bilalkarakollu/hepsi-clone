@@ -1,4 +1,5 @@
 import React from "react";
+import Filter from "../../components/Filter";
 import Product from "../../components/Product";
 import { Container } from "../../styled/Global";
 import { HomeRow, Left, Right } from "../../styled/Home.styled";
@@ -8,7 +9,9 @@ const Home = () => {
   return (
     <Container>
       <HomeRow>
-        <Left>grid1</Left>
+        <Left>
+          <Filter/>
+        </Left>
         <Right>
           <ProductRow>
             <Product />
