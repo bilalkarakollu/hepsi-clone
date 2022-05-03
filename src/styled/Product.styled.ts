@@ -70,7 +70,7 @@ export const Button = styled.button`
   outline: none;
   width: 100%;
   height: 100%;
-  border-radius: 10px;
+  border-radius: 8px;
 `;
 
 export const FavContainer = styled.div`
@@ -78,15 +78,18 @@ export const FavContainer = styled.div`
   position: absolute;
   top: 20px;
   right: 20px;
-  background-color: #e8e8e8;
+  background-color: #F1F1F1;
   border-radius: 50%;
   width: 40px;
   height: 40px;
   justify-content: center;
   align-items: center;
-  i {
+  cursor: pointer;
+  
+  svg {
     position: absolute;
-    bottom: 9px;
+    bottom: 7px;
+    font-size: x-large;
   }
 `;
 
