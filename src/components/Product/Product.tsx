@@ -10,11 +10,14 @@ import {
   Price,
   Title,
 } from "../../styled/Product.styled";
+import { IoHeartOutline } from "react-icons/io5";
 
 const Product = () => {
   return (
     <Card>
-      <FavContainer></FavContainer>
+      <FavContainer onClick={() => alert('Favorilere eklendi')}>
+        <IoHeartOutline />
+      </FavContainer>
       <ImgContainer>
         <Img src="https://productimages.hepsiburada.net/s/49/222-222/10983949860914.jpg/format:webp" />
       </ImgContainer>
@@ -22,7 +25,7 @@ const Product = () => {
         <Title>Apple MacBook Air M1 Çip 8GB 256GB SSD</Title>
         <Price>15.589,00 TL</Price>
         <BtnContainer>
-          <Button>Sepete Ekle</Button>
+          <Button onClick={() => alert('sepete eklendi')}>Sepete Ekle</Button>
         </BtnContainer>
       </Body>
     </Card>
