@@ -12,6 +12,11 @@ export const Global = createGlobalStyle`
     body {
         font-family: 'Roboto', sans-serif; 
     }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
 `;
 
 export const Container = styled.div`

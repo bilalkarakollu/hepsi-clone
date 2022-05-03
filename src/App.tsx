@@ -3,6 +3,9 @@ import { Global } from "./styled/Global";
 import { ThemeProvider } from "styled-components";
 import { Theme } from "./types/theme";
 import Home from "./pages/Home";
+import { Routes, Route } from "react-router-dom";
+import AppLayout from "./layouts/AppLayout";
+import ProductDetay from "./pages/ProductDetay";
 
 const App = () => {
   const theme: Theme = {
@@ -24,7 +27,12 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <Global />
-      <Home/>
+      <Routes>
+        <Route path="/" element={<AppLayout />}>
+          <Route index  element={<Home />} />
+          <Route path="/:id"  element={<ProductDetay />} />
+        </Route>
+      </Routes>
     </ThemeProvider>
   );
 };
