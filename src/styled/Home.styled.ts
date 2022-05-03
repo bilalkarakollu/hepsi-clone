@@ -21,14 +21,36 @@ export const HomeRow = styled.div`
   }
 `;
 
-export const Left = styled.div`
+interface LeftProps {
+  isOpen: boolean;
+}
+
+export const Left = styled.div<LeftProps>`
   display: none;
   margin: 20px 0;
   @media ${(props) => props.theme.media.lg} {
     display: block;
   }
+
+  ${({ isOpen }) =>
+    isOpen &&
+    `
+  display: grid;
+  position: fixed;
+  background-color: white;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  top: -10px;
+
+  > * {
+    z-index: 10;
+  }
+  
+  `}
 `;
 
 export const Right = styled.div`
-margin: 20px 0;
+  margin: 20px 0;
 `;
