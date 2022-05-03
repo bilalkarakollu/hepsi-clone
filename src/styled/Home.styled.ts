@@ -23,9 +23,12 @@ export const HomeRow = styled.div`
 
 export const Left = styled.div`
   display: none;
+  margin: 20px 0;
   @media ${(props) => props.theme.media.lg} {
     display: block;
   }
 `;
 
-export const Right = styled.div``;
+export const Right = styled.div`
+margin: 20px 0;
+`;
