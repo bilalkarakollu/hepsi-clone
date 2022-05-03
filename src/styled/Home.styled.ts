@@ -1,15 +1,31 @@
 import styled from "styled-components";
 
 export const HomeRow = styled.div`
-    display: grid;
+  display: grid;
+  gap: 0.8rem;
+
+  @media ${(props) => props.theme.media.xs} {
+    grid-template-columns: 12fr;
+  }
+  @media ${(props) => props.theme.media.sm} {
+    grid-template-columns: 12fr;
+  }
+  @media ${(props) => props.theme.media.md} {
+    grid-template-columns: 12fr;
+  }
+  @media ${(props) => props.theme.media.lg} {
     grid-template-columns: 2fr 10fr;
-    gap: 0.8rem;
+  }
+  @media ${(props) => props.theme.media.xl} {
+    grid-template-columns: 2fr 10fr;
+  }
 `;
 
 export const Left = styled.div`
-    
+  display: none;
+  @media ${(props) => props.theme.media.lg} {
+    display: block;
+  }
 `;
 
-export const Right = styled.div`
-    
-`;
+export const Right = styled.div``;
