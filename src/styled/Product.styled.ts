@@ -21,7 +21,7 @@ export const ProductRow = styled.div`
 `;
 
 export const ImgContainer = styled.div`
-border: 1px solid white;
+  border: 1px solid white;
   border-radius: 10px;
   overflow: hidden;
   min-height: 155px;
@@ -45,7 +45,11 @@ export const Body = styled.div`
 export const Title = styled.div`
   font-size: small;
   font-weight: 400;
-  margin: 4px 0;
+  min-height: 31px;
+  @media ${(props) => props.theme.media.lg} {
+    min-height: inherit;
+    margin: 4px 0;
+  }
 `;
 
 export const Price = styled.div`
@@ -66,7 +70,7 @@ export const BtnContainer = styled.div`
 `;
 
 interface IButtonProps {
-isSepet: boolean;
+  isSepet: boolean;
 }
 
 export const Button = styled.button<IButtonProps>`
@@ -104,21 +108,28 @@ export const FavContainer = styled.div<IFavProps>`
   right: 20px;
   background-color: #f1f1f1;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   justify-content: center;
   align-items: center;
   cursor: pointer;
 
+
   svg {
     position: absolute;
     bottom: 7px;
-    font-size: x-large;
-    color: ${(props) => (props.isFav ? "#e35600" : "#898989")};;
+    font-size: 20px;
+    color: ${(props) => (props.isFav ? "#e35600" : "#898989")};
   }
 
   @media ${(props) => props.theme.media.lg} {
     display: none;
+    width: 40px;
+    height: 40px;
+
+    svg {
+      font-size: x-large;
+    }
   }
 `;
 
