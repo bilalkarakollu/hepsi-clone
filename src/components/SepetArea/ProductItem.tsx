@@ -11,8 +11,30 @@ import {
   ProductTitle,
 } from "../../styled/Sepet.styled";
 import { BsPlusLg, BsTrash } from "react-icons/bs";
+import { ProductSepetType } from "../../types/product";
+import { useAppDispatch } from "../../store/hooks";
+import {
+  removeProduct,
+  setSepetProductController,
+} from "../../store/slices/sepetSlice";
+import { Link } from "react-router-dom";
 
-const ProductItem = () => {
+interface IProps {
+  product: ProductSepetType;
+}
+
+const ProductItem = (props: IProps) => {
+  const dispatch = useAppDispatch();
+  const { product } = props;
+
+  const handleDelete = () => {
+    dispatch(removeProduct(product));
+  };
+
+  const handleAdd = () => {
+    dispatch(setSepetProductController(product, 1, false));
+  };
+
   return (
     <ProductListItem>
       <ProductImageContainer>
@@ -20,20 +42,19 @@ const ProductItem = () => {
       </ProductImageContainer>
       <div>
         <ProductTitle>
-          Apple MacBook Air M1 Çip 8GB 256GB SSD macOS 13&quot; QHD Taşınabilir
-          Bilgisayar Uzay Grisi MGN63TU/A
+          <Link to={`/${product.id}`}>{product.title}</Link>
         </ProductTitle>
         <ProductKargoTitle>En geç Perşembe günü kargoda</ProductKargoTitle>
         <ProductPrice>
-          <span>15.200,00</span> TL
+          <span>{Number(product.price) * Number(product.piece)}</span> TL
         </ProductPrice>
       </div>
       <ProductButtons>
-        <ProductButton>
+        <ProductButton onClick={handleAdd}>
           <BsPlusLg />
         </ProductButton>
-        <ProductAdet>1</ProductAdet>
-        <ProductButton>
+        <ProductAdet>{product.piece}</ProductAdet>
+        <ProductButton onClick={handleDelete}>
           <BsTrash />
         </ProductButton>
       </ProductButtons>

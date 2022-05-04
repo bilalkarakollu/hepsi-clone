@@ -14,7 +14,7 @@ import { IoHeartOutline, IoHeart } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { ProductType } from "../../types/product";
 import { useAppDispatch} from "../../store/hooks";
-import { setSepetProductOdd } from "../../store/slices/sepetSlice";
+import { setSepetProductController } from "../../store/slices/sepetSlice";
 interface IProductProps {
   product: ProductType;
 }
@@ -29,7 +29,7 @@ const Product = (props:IProductProps) => {
 
   const sepeteEkle = (e:React.MouseEvent<HTMLElement>) => {
     setIsSepet(true);
-    dispatch(setSepetProductOdd(product,1));
+    dispatch(setSepetProductController(product,1));
     e.preventDefault();
   };
 

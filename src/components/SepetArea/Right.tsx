@@ -8,13 +8,17 @@ import {
   DescEkstra,
   DescItem,
 } from "../../styled/Sepet.styled";
+import { useAppSelector } from "../../store/hooks";
 
 const Right = () => {
+
+  const { totalPrice } = useAppSelector(state => state.sepet);
+  
   return (
     <div className="right">
       <TotalContainer>
         <TotalPrice>
-          15.603,99 <span>TL</span>
+          {totalPrice + 15} <span>TL</span>
         </TotalPrice>
         <TotalBtn>Alışverişi tamamla</TotalBtn>
         <TotalTitle>
@@ -26,7 +30,7 @@ const Right = () => {
             <div>Kargo</div> <div>14,99 TL</div>
           </DescItem>
           <DescItem>
-            <div>Ürünler</div> <div>15.589,00 TL</div>
+            <div>Ürünler</div> <div>{totalPrice} TL</div>
           </DescItem>
         </TotalDesc>
         <DescEkstra>Kuponlarım / İndirim kodu</DescEkstra>

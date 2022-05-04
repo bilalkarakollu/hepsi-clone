@@ -9,26 +9,34 @@ import {
 } from "../../styled/Sepet.styled";
 import ProductItem from "./ProductItem";
 import Right from "./Right";
+import { useAppSelector } from "../../store/hooks";
 
 const SepetArea = () => {
+  const { products, urunAdet } = useAppSelector((state) => state.sepet);
+
   return (
     <Row>
       <div className="left">
         <Header>
           <HeaderTitle>Sepet</HeaderTitle>
-          <HeaderSpan>1 ürün</HeaderSpan>
+          <HeaderSpan>{urunAdet} ürün</HeaderSpan>
         </Header>
-        <ProductList>
-          <ProductSatici>
-            Satıcı: <span>Bilal Karakollu</span>
-          </ProductSatici>
+        {urunAdet > 0 ? (
+          <ProductList>
+            <ProductSatici>
+              Satıcı: <span>Bilal Karakollu</span>
+            </ProductSatici>
 
-          <ProductItem />
-        
-        </ProductList>
+            {products.map((product) => (
+              <ProductItem key={Number(product.id)} product={product} />
+            ))}
+          </ProductList>
+        ) : (
+          "Sepetiniz boş."
+        )}
       </div>
 
-      <Right />
+      {urunAdet > 0 && <Right />}
     </Row>
   );
 };

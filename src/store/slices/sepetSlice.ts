@@ -1,5 +1,6 @@
 import { ProductSepetType, ProductType } from "../../types/product";
 import { AppThunk } from "..";
+import {toast} from "react-toastify";
 import { createSlice } from "@reduxjs/toolkit";
 
 interface ProductState {
@@ -31,14 +32,13 @@ export const sepetSlice = createSlice({
       } else {
         state.products.push({ ...action.payload.product, piece: action.payload.adet });
       }
-      state.totalPrice += action.payload.product.price;
+      state.totalPrice += Number(action.payload.product.price) * action.payload.adet;
       state.urunAdet += action.payload.adet;
     },
     removeProduct(state, action) {
       const existingItem = state.products.find(
         (item) => item.id === action.payload.id
       );
-
       if (existingItem) {
         if (existingItem.piece === 1) {
           state.products = state.products.filter(
@@ -47,7 +47,7 @@ export const sepetSlice = createSlice({
         } else {
           existingItem.piece -= 1;
         }
-        state.totalPrice -= action.payload.price;
+        state.totalPrice -= Number(action.payload.price);
         state.urunAdet -= 1;
       }
     },
@@ -56,15 +56,21 @@ export const sepetSlice = createSlice({
 
 export const { setProduct, removeProduct } = sepetSlice.actions;
 
-export const setSepetProductOdd =
-  (product: ProductType, adet: number): AppThunk =>
+export const setSepetProductController =
+  (product: ProductType, adet: number, notification?:boolean): AppThunk =>
   (dispatch) => {
 
-    const payload = {
-      product,
-      adet,
-    };
-    dispatch(setProduct(payload));
+    if (adet > 0) {
+      const payload = {
+        product,
+        adet,
+      };
+      dispatch(setProduct(payload));
+      
+      notification && toast.success('Ürün Sepete Eklendi');
+    } else {
+      toast.warn('Ürün Sepete Eklenemedi')
+    }
   };
 
 export default sepetSlice.reducer;

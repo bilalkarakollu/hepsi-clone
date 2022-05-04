@@ -55,6 +55,7 @@ export const ProductListItem = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
+  user-select: none;
   @media ${(props) => props.theme.media.lg} {
     grid-template-columns: 2fr 10fr 1fr;
     gap: 1rem;
