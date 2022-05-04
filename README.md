@@ -45,7 +45,13 @@
 - Typescript
 - Styled Components
 - PWA
+- React Hooks
+- React memo
 
 ## Author
 
 bilalkarakollu
+
+## Lighthouse
+
+![image](https://user-images.githubusercontent.com/47141344/166826400-a1abf7d3-d384-4561-8d2f-7a9ad54cef9c.png)
