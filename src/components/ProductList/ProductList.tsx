@@ -5,7 +5,7 @@ import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { fetchProductsAsync } from "../../store/slices/productSlice";
 
 const ProductList = () => {
-  console.log("ProductList Mounted");
+  
   const dispatch = useAppDispatch();
   const { products, loading, error, url } = useAppSelector(
     (state) => state.product

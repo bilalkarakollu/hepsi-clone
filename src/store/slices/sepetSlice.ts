@@ -1,4 +1,4 @@
-import { ProductSepetType } from "../../types/product";
+import { ProductSepetType, ProductType } from "../../types/product";
 import { AppThunk } from "..";
 import { createSlice } from "@reduxjs/toolkit";
 
@@ -24,15 +24,15 @@ export const sepetSlice = createSlice({
   reducers: {
     setProduct(state, action) {
       const existingItem = state.products.find(
-        (item) => item.id === action.payload.id
+        (item) => item.id === action.payload.product.id
       );
       if (existingItem) {
-        existingItem.piece += 1;
+        existingItem.piece += action.payload.adet;
       } else {
-        state.products.push({ ...action.payload, piece: 1 });
+        state.products.push({ ...action.payload.product, piece: action.payload.adet });
       }
-      state.totalPrice += action.payload.price;
-      state.urunAdet += 1;
+      state.totalPrice += action.payload.product.price;
+      state.urunAdet += action.payload.adet;
     },
     removeProduct(state, action) {
       const existingItem = state.products.find(
@@ -44,24 +44,27 @@ export const sepetSlice = createSlice({
           state.products = state.products.filter(
             (item) => item.id !== action.payload.id
           );
-        }else{
+        } else {
           existingItem.piece -= 1;
         }
         state.totalPrice -= action.payload.price;
         state.urunAdet -= 1;
       }
-    }
+    },
   },
 });
 
 export const { setProduct, removeProduct } = sepetSlice.actions;
 
-
-export const setProductOdd =
-  (product:ProductState): AppThunk =>
+export const setSepetProductOdd =
+  (product: ProductType, adet: number): AppThunk =>
   (dispatch) => {
-    dispatch(setProduct(product));
 
+    const payload = {
+      product,
+      adet,
+    };
+    dispatch(setProduct(payload));
   };
 
 export default sepetSlice.reducer;

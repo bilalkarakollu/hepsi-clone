@@ -1,13 +1,7 @@
 import React from "react";
-import { BsSearch, BsHeartFill } from "react-icons/bs";
-import { MdShoppingCart } from "react-icons/md";
+import { BsSearch } from "react-icons/bs";
 import {
-  Badge,
-  BadgeContainer,
   BtnContainer,
-  BtnGrey,
-  BtnText,
-  BtnWhite,
   InputContainer,
   NavImg,
   NavLogo,
@@ -18,8 +12,11 @@ import {
 } from "../../styled/Navbar.styled";
 import { Container } from "../../styled/Global";
 import { Link } from "react-router-dom";
+import SepetBtn from "./SepetBtn";
+import FavBtn from "./FavBtn";
 
 const Navbar = () => {
+  
   return (
     <Container>
       <NavbarBox>
@@ -41,22 +38,8 @@ const Navbar = () => {
         </SearchContainer>
 
         <BtnContainer>
-          <BtnWhite>
-            <BadgeContainer>
-              <BsHeartFill />
-              <Badge>0</Badge>
-            </BadgeContainer>
-            <BtnText>Favoriler</BtnText>
-          </BtnWhite>
-          <Link to={"/sepet"}>
-            <BtnGrey>
-              <BadgeContainer>
-                <MdShoppingCart />
-                <Badge>0</Badge>
-              </BadgeContainer>
-              <BtnText>Sepet</BtnText>
-            </BtnGrey>
-          </Link>
+          <FavBtn/>
+          <SepetBtn/>
         </BtnContainer>
       </NavbarBox>
     </Container>

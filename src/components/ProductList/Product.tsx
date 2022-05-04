@@ -13,24 +13,27 @@ import {
 import { IoHeartOutline, IoHeart } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { ProductType } from "../../types/product";
-
+import { useAppDispatch} from "../../store/hooks";
+import { setSepetProductOdd } from "../../store/slices/sepetSlice";
 interface IProductProps {
   product: ProductType;
 }
 
 const Product = (props:IProductProps) => {
+  const dispatch = useAppDispatch();
 
   const { product } = props;
 
   const [isFav, setIsFav] = useState(false);
   const [isSepet, setIsSepet] = useState(false);
 
-  const sepeteEkle = (e:any) => {
+  const sepeteEkle = (e:React.MouseEvent<HTMLElement>) => {
     setIsSepet(true);
+    dispatch(setSepetProductOdd(product,1));
     e.preventDefault();
   };
 
-  const favEkle = (e:any) => {
+  const favEkle = (e:React.MouseEvent<HTMLElement>) => {
     setIsFav(!isFav);
     e.preventDefault();
   };
