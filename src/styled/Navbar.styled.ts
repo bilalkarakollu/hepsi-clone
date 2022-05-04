@@ -97,6 +97,7 @@ export const SearchBtn = styled.button`
   letter-spacing: -0.24px;
   font-weight: 600;
   cursor: pointer;
+  text-transform: uppercase;
 `;
 
 export const BtnContainer = styled.div`
