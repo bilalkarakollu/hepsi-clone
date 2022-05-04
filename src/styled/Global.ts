@@ -15,6 +15,11 @@ export const Global = createGlobalStyle`
         text-decoration: none;
         color: inherit;
     }
+    
+    input:focus {
+    outline:none;
+}
+
 `;
 
 export const Container = styled.div`

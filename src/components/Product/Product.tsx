@@ -20,10 +20,15 @@ const Product = () => {
     e.preventDefault();
   };
 
+  const favEkle = (e:any) => {
+    alert("fav Eklendi");
+    e.preventDefault();
+  };
+
   return (
     <Card>
       <Link to={'/55'}>
-        <FavContainer onClick={() => alert("Favorilere eklendi")}>
+        <FavContainer onClick={favEkle}>
           <IoHeartOutline />
         </FavContainer>
         <ImgContainer>

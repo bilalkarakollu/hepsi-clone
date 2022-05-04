@@ -14,7 +14,10 @@ export const Row = styled.div`
 
 export const ImageContainer = styled.div`
   width: 100%;
-  height: 550px;
+  height: 250px;
+  @media ${(props) => props.theme.media.lg} {
+    height: 550px;
+  }
 `;
 
 export const ProductImage = styled.img`
@@ -32,9 +35,12 @@ export const ProductInformation = styled.div`
 export const ProductTitle = styled.div`
   color: #484848;
   line-height: 1.2;
-  font-size: 17px;
+  font-size: small;
   font-weight: 600;
   margin: 0;
+  @media ${(props) => props.theme.media.lg} {
+    font-size: 17px;
+  }
 `;
 
 export const ProductPriceandRatings = styled.div`
@@ -47,14 +53,20 @@ export const ProductPriceandRatings = styled.div`
 
 export const ProductPrice = styled.span`
   color: #484848;
-  font-size: 32px;
+  font-size: large;
   font-weight: 600;
+  @media ${(props) => props.theme.media.lg} {
+    font-size: 32px;
+  }
 `;
 
 export const ProductPriceKur = styled.span`
   color: #484848;
-  font-size: 14px;
+  font-size: small;
   font-weight: 600;
+  @media ${(props) => props.theme.media.lg} {
+    font-size: 14px;
+  }
 `;
 
 export const ProductRatingsContainer = styled.div`
@@ -62,20 +74,27 @@ export const ProductRatingsContainer = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
 `;
 
 export const StarContainer = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.3rem;
-    font-size: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: small;
+  color: #ffa900;
+  @media ${(props) => props.theme.media.lg} {
+    font-size: 16px;
+  }
 `;
 
 export const RatingRate = styled.div`
-  font-size: 20px;
+  font-size: medium;
   font-weight: 500;
+  @media ${(props) => props.theme.media.lg} {
+    font-size: 20px;
+  }
 `;
 
 export const ProductDegerlendirme = styled.div`
@@ -83,9 +102,12 @@ export const ProductDegerlendirme = styled.div`
   flex-wrap: wrap;
   justify-content: flex-end;
   color: #484848;
-  font-size: 12px;
+  font-size: x-small;
   font-weight: 700;
   gap: 0.5rem;
+  @media ${(props) => props.theme.media.lg} {
+    font-size: 12px;
+  }
 `;
 
 export const ProductButtons = styled.div`
@@ -96,6 +118,11 @@ export const ProductButtons = styled.div`
   align-items: center;
   gap: 0.5rem;
   border-top: 1px solid #e5e5e5;
+  justify-content: space-around;
+
+  @media ${(props) => props.theme.media.lg} {
+    justify-content: start;
+  }
 `;
 
 export const ButtonsInputContainer = styled.div`
@@ -155,8 +182,8 @@ export const ProductSepeteEkleButton = styled.button`
   align-items: center;
   gap: 0.5rem;
 
-  svg{
-      font-size: 20px;
+  svg {
+    font-size: 20px;
   }
 
   &:hover {
@@ -165,13 +192,19 @@ export const ProductSepeteEkleButton = styled.button`
 `;
 
 export const ProductOzellikTitle = styled.div`
-  font-size: 14px;
+  font-size: xx-small;
+  @media ${(props) => props.theme.media.lg} {
+    font-size: 14px;
+  }
 `;
 
 export const ProductOzellikTable = styled.table`
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
+  font-size: small;
+  margin-bottom: 10rem;
+  
   tr td {
     padding: 4px;
   }
@@ -183,14 +216,22 @@ export const ProductOzellikTable = styled.table`
   tr td:nth-last-child(even) {
     font-weight: 500;
   }
+
+  @media ${(props) => props.theme.media.lg} {
+    font-size: inherit;
+  }
 `;
 
 export const AddContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
   margin-top: 0.5rem;
+
+  @media ${(props) => props.theme.media.lg} {
+    gap: 1rem;
+  }
 `;
 
 export const AddItemBtn = styled.button`
@@ -206,9 +247,17 @@ export const AddItemBtn = styled.button`
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: -0.28px;
+  user-select: none;
 
   svg {
-    font-size: 20px;
+    font-size: 15px;
+  }
+
+  @media ${(props) => props.theme.media.lg} {
+    font-size: 14px;
+    svg {
+      font-size: 20px;
+    }
   }
 `;
 
@@ -217,17 +266,22 @@ export const SellerContainer = styled.div`
   zoom: 1;
   width: fit-content;
   padding: 5px;
-  height: 20px;
+  height: 15px;
   display: flex;
   gap: 0.2rem;
   align-items: center;
   background-color: #fff;
   border: 1px solid #ddd;
   line-height: 1;
-  font-size: 13px;
+  font-size: x-small;
   font-weight: 800;
   color: #919191;
   span {
     color: #537ecf;
+  }
+
+  @media ${(props) => props.theme.media.lg} {
+    font-size: 13px;
+    height: 20px;
   }
 `;

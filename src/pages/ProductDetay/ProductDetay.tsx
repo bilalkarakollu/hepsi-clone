@@ -25,8 +25,8 @@ import {
   SellerContainer,
   StarContainer
 } from "../../styled/ProductDetay.styled";
-import { MdShoppingCart, MdStarOutline, MdOutlineBookmarkBorder } from "react-icons/md";
-import { BsBookmark, BsHeart, BsBell, BsArrowLeftRight, BsStar } from "react-icons/bs";
+import { MdShoppingCart} from "react-icons/md";
+import { BsBookmark, BsHeart, BsBell, BsArrowLeftRight, BsStar, BsStarFill, BsStarHalf } from "react-icons/bs";
 
 const ProductDetay = () => {
   return (
@@ -50,11 +50,11 @@ const ProductDetay = () => {
             <ProductRatingsContainer>
               <RatingRate>4.9</RatingRate>
               <StarContainer>
-                <BsStar />
-                <BsStar />
-                <BsStar />
-                <BsStar />
-                <BsStar />
+                <BsStarFill />
+                <BsStarFill />
+                <BsStarFill />
+                <BsStarFill />
+                <BsStarHalf />
               </StarContainer>
             </ProductRatingsContainer>
           </ProductPriceandRatings>

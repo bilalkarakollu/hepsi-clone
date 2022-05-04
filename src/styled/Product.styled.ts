@@ -24,10 +24,10 @@ export const ImgContainer = styled.div`
 border: 1px solid white;
   border-radius: 10px;
   overflow: hidden;
-  min-height: 240px;
-
+  min-height: 155px;
   @media ${(props) => props.theme.media.lg} {
     border: 1px solid #e6e6e6;
+    min-height: 240px;
   }
 `;
 
