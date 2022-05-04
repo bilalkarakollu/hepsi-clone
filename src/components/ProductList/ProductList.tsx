@@ -7,10 +7,10 @@ import { fetchProductsAsync } from "../../store/slices/productSlice";
 const ProductList = () => {
 
     const dispatch = useAppDispatch();
-    const { products, loading, error } = useAppSelector(state => state.product);
+    const { products, loading, error, url } = useAppSelector(state => state.product);
   useEffect(() => {
     dispatch(fetchProductsAsync());
-  }, []);
+  }, [url]);
 
   if (loading) {
     return <p>Loading...</p>;
@@ -23,7 +23,7 @@ const ProductList = () => {
   return (
     <ProductRow>
       {products.map(product => (
-          <Product key={product.id} product={product}/>
+          <Product key={Number(product.id)} product={product}/>
         ))}
     </ProductRow>
   );

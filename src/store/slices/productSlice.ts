@@ -6,20 +6,23 @@ interface ProductState {
   products: ProductType[];
   loading: boolean;
   error: string;
+  url: string;
 }
 
 const initialState: ProductState = {
   products: [],
   loading: false,
   error: "",
+  url: "https://computer-app-server.herokuapp.com/products",
 };
 
 export const fetchProductsAsync = createAsyncThunk(
   "product/fetchProducts",
-  async () => {
+  async (value, { getState }) => {
     try {
+      const {product} = getState() as { product: ProductState };
       const { data } = await axios.get(
-        "https://computer-app-server.herokuapp.com/products"
+        product.url
       );
       return data;
     } catch (error) {
