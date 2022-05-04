@@ -38,7 +38,10 @@ const ProductItem = (props: IProps) => {
   return (
     <ProductListItem>
       <ProductImageContainer>
-        <ProductImage src="https://productimages.hepsiburada.net/s/49/250/10983949860914.jpg" />
+        <ProductImage
+          src="https://productimages.hepsiburada.net/s/49/250/10983949860914.jpg"
+          alt={product.title}
+        />
       </ProductImageContainer>
       <div>
         <ProductTitle>

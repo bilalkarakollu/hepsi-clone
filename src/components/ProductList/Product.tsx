@@ -45,7 +45,7 @@ const Product = (props:IProductProps) => {
           {isFav ? <IoHeart /> : <IoHeartOutline />}
         </FavContainer>
         <ImgContainer>
-          <Img src="https://productimages.hepsiburada.net/s/49/222-222/10983949860914.jpg/format:webp" />
+          <Img src="https://productimages.hepsiburada.net/s/49/222-222/10983949860914.jpg/format:webp" alt={product.title}/>
         </ImgContainer>
         <Body>
           <Title>{product.title}</Title>
