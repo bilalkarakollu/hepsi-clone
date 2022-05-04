@@ -37,6 +37,7 @@ const Filter = (props:FilterProps) => {
           </FilterLabel>
           <FilterInput type={"text"} placeholder="Filtrele" />
         </InputContainer>
+        
         <CheckboxContainer>
           <FilterItem />
           <FilterItem />

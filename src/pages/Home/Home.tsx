@@ -1,5 +1,5 @@
 import React from "react";
-import Filter from "../../components/Filter";
+import FilterList from "../../components/FilterList";
 import MobilMenu from "../../components/MobilMenu/MobilMenu";
 import ProductList from "../../components/ProductList";
 import { Container } from "../../styled/Global";
@@ -15,7 +15,7 @@ const Home = () => {
       <MobilMenu/>
       <HomeRow>
         <Left isOpen={isOpen}>
-          <Filter/>
+          <FilterList/>
         </Left>
         <Right>
             <ProductList/>
