@@ -21,4 +21,4 @@ const FilterList = () => {
   return <Filter title="Kategoriler" filters={filters} />;
 };
 
-export default FilterList;
+export default React.memo(FilterList);

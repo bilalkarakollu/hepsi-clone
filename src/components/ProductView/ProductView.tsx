@@ -40,6 +40,7 @@ const ProductView = () => {
 
   useEffect(() => {
     getProduct();
+    window.scrollTo(0, 0);
   }, []);
 
   if (isLoading) {

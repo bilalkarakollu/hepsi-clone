@@ -7,6 +7,7 @@ interface FilterState {
   loading: boolean;
   error: string;
   url: string;
+  isOpen: boolean
 }
 
 const initialState: FilterState = {
@@ -14,6 +15,7 @@ const initialState: FilterState = {
   loading: false,
   error: "",
   url: "https://computer-app-server.herokuapp.com/categories",
+  isOpen: false
 };
 
 export const fetchFiltersAsync = createAsyncThunk(
@@ -32,7 +34,11 @@ export const fetchFiltersAsync = createAsyncThunk(
 export const filterSlice = createSlice({
   name: "filter",
   initialState,
-  reducers: {},
+  reducers: {
+    setIsOpen: (state) => {
+      state.isOpen = !state.isOpen
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchFiltersAsync.pending, (state) => {
@@ -48,5 +54,7 @@ export const filterSlice = createSlice({
       });
   },
 });
+
+export const { setIsOpen } = filterSlice.actions; 
 
 export default filterSlice.reducer;

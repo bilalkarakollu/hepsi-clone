@@ -54,3 +54,18 @@ export const Left = styled.div<LeftProps>`
 export const Right = styled.div`
   margin: 20px 0;
 `;
+
+export const FilterCancel = styled.div`
+  position: absolute;
+  display: flex;
+  align-items: center;
+  color: white;
+  top: 5px;
+  right: 20px;
+  background-color: #FFA900;
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+  cursor: pointer;
+  z-index: 20;
+`;

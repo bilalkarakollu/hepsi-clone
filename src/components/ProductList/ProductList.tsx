@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { fetchProductsAsync } from "../../store/slices/productSlice";
 
 const ProductList = () => {
+  console.log("ProductList Mounted");
   const dispatch = useAppDispatch();
   const { products, loading, error, url } = useAppSelector(
     (state) => state.product
@@ -21,8 +22,8 @@ const ProductList = () => {
     return <p>{error}</p>;
   }
 
-  if (!products) {
-    return <p>No products</p>;
+  if (products.length === 0) {
+    return <p>Ürün Bulunamadı.</p>;
   }
 
   return (
@@ -34,4 +35,4 @@ const ProductList = () => {
   );
 };
 
-export default ProductList;
+export default React.memo(ProductList);

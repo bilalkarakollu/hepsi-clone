@@ -54,4 +54,4 @@ const Filter = (props: FilterProps) => {
   );
 };
 
-export default Filter;
+export default React.memo(Filter);
