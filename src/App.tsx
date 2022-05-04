@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import { Routes, Route } from "react-router-dom";
 import AppLayout from "./layouts/AppLayout";
 import ProductDetay from "./pages/ProductDetay";
+import Sepet from "./pages/Sepet";
 
 const App = () => {
   const theme: Theme = {
@@ -30,6 +31,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<AppLayout />}>
           <Route index  element={<Home />} />
+          <Route path="/sepet"  element={<Sepet />} />
           <Route path="/:id"  element={<ProductDetay />} />
         </Route>
       </Routes>

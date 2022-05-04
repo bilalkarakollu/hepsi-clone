@@ -48,13 +48,15 @@ const Navbar = () => {
             </BadgeContainer>
             <BtnText>Favoriler</BtnText>
           </BtnWhite>
-          <BtnGrey>
-            <BadgeContainer>
-              <MdShoppingCart />
-              <Badge>0</Badge>
-            </BadgeContainer>
-            <BtnText>Sepet</BtnText>
-          </BtnGrey>
+          <Link to={"/sepet"}>
+            <BtnGrey>
+              <BadgeContainer>
+                <MdShoppingCart />
+                <Badge>0</Badge>
+              </BadgeContainer>
+              <BtnText>Sepet</BtnText>
+            </BtnGrey>
+          </Link>
         </BtnContainer>
       </NavbarBox>
     </Container>
