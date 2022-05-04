@@ -11,7 +11,7 @@ const FavBtn = () => {
     <BtnWhite>
       <BadgeContainer>
         <BsHeartFill />
-        <Badge>0</Badge>
+        {/* <Badge>2</Badge> */}
       </BadgeContainer>
       <BtnText>Favoriler</BtnText>
     </BtnWhite>

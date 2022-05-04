@@ -155,6 +155,9 @@ export const BtnGrey = styled(Btn)`
 
 export const BadgeContainer = styled.span`
   position: relative;
+  svg{
+    margin-top: 4px;
+  }
 `;
 
 export const Badge = styled.span`
