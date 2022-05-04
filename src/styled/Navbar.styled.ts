@@ -160,12 +160,16 @@ export const BadgeContainer = styled.span`
 export const Badge = styled.span`
   position: absolute;
   display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 12px;
   top: -8px;
   right: -10px;
   border: 1px solid white;
   background-color: #ff6000;
-  padding: 1px 5px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   color: #fff;
+  overflow: hidden;
 `;
