@@ -26,7 +26,7 @@ import {
   StarContainer
 } from "../../styled/ProductDetay.styled";
 import { MdShoppingCart} from "react-icons/md";
-import { BsBookmark, BsHeart, BsBell, BsArrowLeftRight, BsStar, BsStarFill, BsStarHalf } from "react-icons/bs";
+import { BsBookmark, BsHeart, BsBell, BsArrowLeftRight, BsStarFill, BsStarHalf } from "react-icons/bs";
 
 const ProductDetay = () => {
   return (
