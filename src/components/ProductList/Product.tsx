@@ -29,7 +29,7 @@ const Product = (props:IProductProps) => {
 
   const sepeteEkle = (e:React.MouseEvent<HTMLElement>) => {
     setIsSepet(true);
-    dispatch(setSepetProductController(product,1));
+    dispatch(setSepetProductController(product,1, true));
     e.preventDefault();
   };
 

@@ -63,7 +63,7 @@ const ProductRight = (props:IProps) => {
             Satıcı: <span>Bilal Karakollu</span>
           </SellerContainer>
           
-            <ButtonView/>
+            <ButtonView product={product}/>
 
           <AddContainer>
             <AddItemBtn>
