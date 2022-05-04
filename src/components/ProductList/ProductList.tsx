@@ -21,6 +21,10 @@ const ProductList = () => {
     return <p>{error}</p>;
   }
 
+  if (!products) {
+    return <p>No products</p>;
+  }
+
   return (
     <ProductRow>
       {products.map((product) => (

@@ -8,23 +8,26 @@ import {
   InputContainer,
   Title,
   TitleContainer,
-  FilterContainer
+  FilterContainer,
 } from "../../styled/Filter.styled";
 import { IoSearchOutline } from "react-icons/io5";
 import FilterItem from "./FilterItem";
+import { FilterType } from "../../types/filters";
 
 interface FilterProps {
   title: string;
-  items?: string[];
-  onChange?: (value: string) => void;
+  filters: FilterType[];
 }
 
-const Filter = (props:FilterProps) => {
+const Filter = (props: FilterProps) => {
+  const { title, filters } = props;
 
-  const { title, items, onChange } = props;
+  const [filterInput, setFilterInput] = React.useState("");
 
-  const [filter, setFilter] = React.useState("");
-  
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFilterInput(e.target.value);
+  };
+
   return (
     <FilterContainer>
       <TitleContainer>
@@ -35,17 +38,14 @@ const Filter = (props:FilterProps) => {
           <FilterLabel>
             <IoSearchOutline />
           </FilterLabel>
-          <FilterInput type={"text"} placeholder="Filtrele" />
+          <FilterInput type={"text"} placeholder="Filtrele" onChange={handleChange}/>
         </InputContainer>
-        
+
         <CheckboxContainer>
-          <FilterItem />
-          <FilterItem />
-          <FilterItem />
-          <FilterItem />
-          <FilterItem />
-          <FilterItem />
-          <FilterItem />
+
+          {filters.filter((filter) => filter.category.toLowerCase().includes(filterInput.toLowerCase())).map((filter) => {
+            return <FilterItem key={Number(filter.id)} filter={filter} />
+          })}
 
           <CheckboxContainerShadow />
         </CheckboxContainer>

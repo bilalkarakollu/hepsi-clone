@@ -20,10 +20,8 @@ export const fetchFiltersAsync = createAsyncThunk(
   "product/fetchFilters",
   async (value, { getState }) => {
     try {
-      const {filter} = getState() as { filter: FilterState };
-      const { data } = await axios.get(
-        filter.url
-      );
+      const { filter } = getState() as { filter: FilterState };
+      const { data } = await axios.get(filter.url);
       return data;
     } catch (error) {
       return error;

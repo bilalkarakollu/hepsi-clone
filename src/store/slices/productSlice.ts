@@ -1,4 +1,5 @@
 import { ProductType } from "../../types/product";
+import { AppThunk } from "..";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
@@ -34,7 +35,11 @@ export const fetchProductsAsync = createAsyncThunk(
 export const productSlice = createSlice({
   name: "product",
   initialState,
-  reducers: {},
+  reducers: {
+    setProductUrl(state, action) {
+      state.url = action.payload;
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchProductsAsync.pending, (state) => {
@@ -50,5 +55,25 @@ export const productSlice = createSlice({
       });
   },
 });
+
+export const { setProductUrl } = productSlice.actions;
+
+export const setProductParamOdd =
+  (param:string, category: string, type:boolean): AppThunk =>
+  (dispatch, getState) => {
+    const {product} = getState() as { product: ProductState };
+
+    const newURL = new URL(product.url);
+    
+    if(type){
+      const urlChange = new URL(product.url);
+      newURL.searchParams.delete(param);
+      urlChange.searchParams.forEach((value, key) => value !== category && newURL.searchParams.append(key, value));
+    }else{
+      newURL.searchParams.append(param, category);
+    }
+    console.log(newURL.searchParams.getAll(param));
+    dispatch(setProductUrl(newURL));
+  };
 
 export default productSlice.reducer;
