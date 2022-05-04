@@ -65,7 +65,11 @@ export const BtnContainer = styled.div`
   }
 `;
 
-export const Button = styled.button`
+interface IButtonProps {
+isSepet: boolean;
+}
+
+export const Button = styled.button<IButtonProps>`
   display: block;
   padding: 0 10px;
   font-size: small;
@@ -82,14 +86,18 @@ export const Button = styled.button`
   @media ${(props) => props.theme.media.lg} {
     display: none;
     border: none;
-    background: #e35600;
+    background: ${(props) => (props.isSepet ? "#68BC39" : "#e35600")};
     color: white;
     font-size: medium;
     font-weight: 600;
   }
 `;
 
-export const FavContainer = styled.div`
+interface IFavProps {
+  isFav: boolean;
+}
+
+export const FavContainer = styled.div<IFavProps>`
   display: flex;
   position: absolute;
   top: 20px;
@@ -106,7 +114,7 @@ export const FavContainer = styled.div`
     position: absolute;
     bottom: 7px;
     font-size: x-large;
-    color: #898989;
+    color: ${(props) => (props.isFav ? "#e35600" : "#898989")};;
   }
 
   @media ${(props) => props.theme.media.lg} {

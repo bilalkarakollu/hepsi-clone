@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
   Card,
   Body,
@@ -10,7 +10,7 @@ import {
   Price,
   Title,
 } from "../../styled/Product.styled";
-import { IoHeartOutline } from "react-icons/io5";
+import { IoHeartOutline, IoHeart } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { ProductType } from "../../types/product";
 
@@ -22,21 +22,24 @@ const Product = (props:IProductProps) => {
 
   const { product } = props;
 
+  const [isFav, setIsFav] = useState(false);
+  const [isSepet, setIsSepet] = useState(false);
+
   const sepeteEkle = (e:any) => {
-    alert("Sepete Eklendi");
+    setIsSepet(true);
     e.preventDefault();
   };
 
   const favEkle = (e:any) => {
-    alert("fav Eklendi");
+    setIsFav(!isFav);
     e.preventDefault();
   };
 
   return (
     <Card>
       <Link to={`/${product.id}`}>
-        <FavContainer onClick={favEkle}>
-          <IoHeartOutline />
+        <FavContainer isFav={isFav} onClick={favEkle}>
+          {isFav ? <IoHeart /> : <IoHeartOutline />}
         </FavContainer>
         <ImgContainer>
           <Img src="https://productimages.hepsiburada.net/s/49/222-222/10983949860914.jpg/format:webp" />
@@ -45,7 +48,7 @@ const Product = (props:IProductProps) => {
           <Title>{product.title}</Title>
           <Price>{product.price} TL</Price>
           <BtnContainer>
-            <Button onClick={sepeteEkle}>Sepete Ekle</Button>
+            <Button isSepet={isSepet} onClick={sepeteEkle}>{isSepet ? 'Sepete Eklendi' : 'Sepete Ekle'}</Button>
           </BtnContainer>
         </Body>
       </Link>
