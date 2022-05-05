@@ -2,6 +2,8 @@ import React from "react";
 import { ProductRow } from "../../styled/Product.styled";
 import Product from "./Product";
 import { ProductType } from "../../types/product";
+import Loading from "./Loading";
+
 interface IProps {
   products: ProductType[];
   loading: boolean;
@@ -13,7 +15,7 @@ const ProductList = (props:IProps) => {
   const { products, loading, error } = props;
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <Loading/>;
   }
 
   if (error) {
