@@ -69,7 +69,7 @@ bilalkarakollu
 ![image](https://user-images.githubusercontent.com/47141344/167001920-03a9ec0b-5d6f-4f35-9bc2-905eac7cfc2a.png)
 ----
 ----
-![image](https://user-images.githubusercontent.com/47141344/167002128-4715df9e-2464-48de-bf59-858bbde2eba0.png)
+![image](https://user-images.githubusercontent.com/47141344/167013193-925c00d4-0787-4361-b47e-77d46dbb95fb.png)
 
 #### Mobil
 
@@ -79,4 +79,4 @@ bilalkarakollu
 ![image](https://user-images.githubusercontent.com/47141344/167002743-e7018563-72c7-4a7a-b8fb-d892b26d646f.png)
 ----
 ----
-![image](https://user-images.githubusercontent.com/47141344/167003089-81ca4004-7e2d-4e7d-b1bf-c5f8ace26180.png)
+![image](https://user-images.githubusercontent.com/47141344/167013023-5d5237df-79e2-436b-bd2c-47d80602e09f.png)
