@@ -43,7 +43,7 @@ export const setFavoriProductController =
     const { products } = getState().favori;
 
     if (isFav) {
-      dispatch(removeProduct(product.id));
+      dispatch(removeProduct(product));
       toast.error("Ürün favori listenizden çıkarıldı.");
     } else {
       if (products.find((item) => item.id === product.id)) {
