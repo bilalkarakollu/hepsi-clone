@@ -23,11 +23,13 @@ export const favoriSlice = createSlice({
   reducers: {
     setProduct(state, action) {
       state.products.push(action.payload);
+      state.urunAdet++;
     },
     removeProduct(state, action) {
       state.products = state.products.filter(
         (item) => item.id !== action.payload.id
       );
+      state.urunAdet--;
     },
   },
 });

@@ -4,14 +4,18 @@ import {
   Badge,
   BadgeContainer,
   BtnText,
-  BtnWhite
+  BtnWhite,
 } from "../../styled/Navbar.styled";
+import { useAppSelector } from "../../store/hooks";
+
 const FavBtn = () => {
+  const { urunAdet } = useAppSelector((state) => state.favori);
+
   return (
     <BtnWhite>
       <BadgeContainer>
         <BsHeartFill />
-        {/* <Badge>2</Badge> */}
+        {urunAdet > 0 && <Badge>{urunAdet}</Badge>}
       </BadgeContainer>
       <BtnText>Favoriler</BtnText>
     </BtnWhite>
