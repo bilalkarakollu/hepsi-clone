@@ -1,18 +1,16 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { ProductRow } from "../../styled/Product.styled";
 import Product from "./Product";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { fetchProductsAsync } from "../../store/slices/productSlice";
+import { ProductType } from "../../types/product";
+interface IProps {
+  products: ProductType[];
+  loading: boolean;
+  error: string;
+}
 
-const ProductList = () => {
-  
-  const dispatch = useAppDispatch();
-  const { products, loading, error, url } = useAppSelector(
-    (state) => state.product
-  );
-  useEffect(() => {
-    dispatch(fetchProductsAsync());
-  }, [url]);
+const ProductList = (props:IProps) => {
+
+  const { products, loading, error } = props;
 
   if (loading) {
     return <p>Loading...</p>;
