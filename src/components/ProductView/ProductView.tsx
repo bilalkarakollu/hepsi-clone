@@ -9,6 +9,7 @@ import ProductLeft from "./ProductLeft";
 import ProductRight from "./ProductRight";
 import { ProductType } from "../../types/product";
 import { useParams } from "react-router-dom";
+import Loading from "./Loading";
 
 const emptyProduct: ProductType = {
   id: "",
@@ -44,7 +45,7 @@ const ProductView = () => {
   }, []);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loading/>;
   }
 
   if (error) {

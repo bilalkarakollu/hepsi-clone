@@ -1,5 +1,10 @@
 import styled, { keyframes } from "styled-components";
 
+interface IProps {
+  height?: string;
+  width?: string;
+}
+
 const ShimmerKeyframes = keyframes`
     0% {
       background-position: -1200px 0;
@@ -25,8 +30,8 @@ export const ShimContainer = styled.div`
     flex-direction: column;
 `;
 
-export const ShimImg = styled(Shimmer)`
-    height: 250px;
+export const ShimImg = styled(Shimmer)<IProps>`
+    height: ${({ height }) => height ? height : '250px'};
     border-radius: 10px;
 `;
 
@@ -34,8 +39,8 @@ export const ShimContent = styled.div`
     padding: 3px;
 `;
 
-export const ShimTitle = styled(Shimmer)`
-    height: 24px;
+export const ShimTitle = styled(Shimmer)<IProps>`
+    height: ${({ height }) => height ? height : '24px'};
     margin: 10px;
     border-radius: 10px;
 `;
