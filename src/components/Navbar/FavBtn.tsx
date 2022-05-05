@@ -7,18 +7,21 @@ import {
   BtnWhite,
 } from "../../styled/Navbar.styled";
 import { useAppSelector } from "../../store/hooks";
+import { Link } from "react-router-dom";
 
 const FavBtn = () => {
   const { urunAdet } = useAppSelector((state) => state.favori);
 
   return (
-    <BtnWhite>
-      <BadgeContainer>
-        <BsHeartFill />
-        {urunAdet > 0 && <Badge>{urunAdet}</Badge>}
-      </BadgeContainer>
-      <BtnText>Favoriler</BtnText>
-    </BtnWhite>
+    <Link to={'/favoriler'}>
+      <BtnWhite>
+        <BadgeContainer>
+          <BsHeartFill />
+          {urunAdet > 0 && <Badge>{urunAdet}</Badge>}
+        </BadgeContainer>
+        <BtnText>Favoriler</BtnText>
+      </BtnWhite>
+    </Link>
   );
 };
 
