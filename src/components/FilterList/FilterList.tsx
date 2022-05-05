@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { fetchFiltersAsync } from "../../store/slices/filterSlice";
 import Filter from "./Filter";
+import Loading from "./Loading";
 
 const FilterList = () => {
   const dispatch = useAppDispatch();
@@ -12,7 +13,7 @@ const FilterList = () => {
     }, [dispatch]);
   
   if (loading) {
-    return <div>Loading...</div>;
+    return <Loading/>;
   }
   if (error) {
     return <div>{error}</div>;
