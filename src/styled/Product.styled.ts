@@ -86,14 +86,19 @@ export const Button = styled.button<IButtonProps>`
   border: 1px solid lightgray;
   color: black;
   background-color: inherit;
+  transition: 400ms;
 
   @media ${(props) => props.theme.media.lg} {
     display: none;
     border: none;
-    background: ${(props) => (props.isSepet ? "#68BC39" : "#e35600")};
+    background: ${(props) => (props.isSepet ? "#68BC39" : "#FF6000")};
     color: white;
     font-size: medium;
     font-weight: 600;
+
+    &:hover {
+      background: ${(props) => (props.isSepet ? "#68BC39" : "#e35600")};
+    }
   }
 `;
 
