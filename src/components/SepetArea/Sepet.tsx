@@ -11,17 +11,20 @@ import ProductItem from "./ProductItem";
 import Right from "./Right";
 import { useAppSelector } from "../../store/hooks";
 
+
 const SepetArea = () => {
   const { products, urunAdet } = useAppSelector((state) => state.sepet);
 
   return (
     <Row>
       <div className="left">
-        <Header>
-          <HeaderTitle>Sepet</HeaderTitle>
-          <HeaderSpan>{urunAdet} ürün</HeaderSpan>
-        </Header>
-        {urunAdet > 0 ? (
+        {urunAdet > 0 && (
+          <Header>
+            <HeaderTitle>Sepet</HeaderTitle>
+            <HeaderSpan>{urunAdet} ürün</HeaderSpan>
+          </Header>
+        )}
+        {urunAdet > 0 && (
           <ProductList>
             <ProductSatici>
               Satıcı: <span>Bilal Karakollu</span>
@@ -31,8 +34,6 @@ const SepetArea = () => {
               <ProductItem key={Number(product.id)} product={product} />
             ))}
           </ProductList>
-        ) : (
-          "Sepetiniz boş."
         )}
       </div>
 

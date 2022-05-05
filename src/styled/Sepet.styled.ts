@@ -12,6 +12,29 @@ export const Row = styled.div`
   }
 `;
 
+export const BosSepet = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  font-size: 1.6rem;
+  margin: 0;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.8;
+  letter-spacing: 1px;
+  border-width: 2px 0px;
+  border-style: solid;
+  border-color: #F4F4F4;
+  svg {
+    font-size: xx-large;
+    color: gray;
+  }
+`;
+
 export const Header = styled.div`
   display: flex;
   align-items: center;
@@ -72,7 +95,7 @@ export const ProductImageContainer = styled.div`
   @media ${(props) => props.theme.media.lg} {
     margin: inherit;
     width: 104px;
-  height: 104px;
+    height: 104px;
   }
 `;
 
