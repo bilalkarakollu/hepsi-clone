@@ -55,3 +55,18 @@ bilalkarakollu
 ## Lighthouse
 
 ![image](https://user-images.githubusercontent.com/47141344/166826400-a1abf7d3-d384-4561-8d2f-7a9ad54cef9c.png)
+
+
+## Screenshots
+
+#### Desktop
+![image](https://user-images.githubusercontent.com/47141344/167001221-435d6f38-98d1-4f6e-af0b-96b8d261d894.png)
+![image](https://user-images.githubusercontent.com/47141344/167001753-55ecf076-9e2b-43de-b8fc-639bde1ecb73.png)
+![image](https://user-images.githubusercontent.com/47141344/167001920-03a9ec0b-5d6f-4f35-9bc2-905eac7cfc2a.png)
+![image](https://user-images.githubusercontent.com/47141344/167002128-4715df9e-2464-48de-bf59-858bbde2eba0.png)
+
+#### Mobil
+
+![image](https://user-images.githubusercontent.com/47141344/167002380-c5c2c779-e71a-4226-aba9-752c5d670092.png)
+![image](https://user-images.githubusercontent.com/47141344/167002743-e7018563-72c7-4a7a-b8fb-d892b26d646f.png)
+![image](https://user-images.githubusercontent.com/47141344/167003089-81ca4004-7e2d-4e7d-b1bf-c5f8ace26180.png)
