@@ -36,14 +36,19 @@ export const { setProduct, removeProduct } = favoriSlice.actions;
 export default favoriSlice.reducer;
 
 export const setFavoriProductController =
-  (product: ProductType): AppThunk =>
+  (product: ProductType, isFav: boolean): AppThunk =>
   (dispatch, getState) => {
     const { products } = getState().favori;
 
-    if (products.find((item) => item.id === product.id)) {
-      toast.warn("Bu ürün zaten favori listenizde var.");
-      return;
+    if (isFav) {
+      dispatch(removeProduct(product.id));
+      toast.error("Ürün favori listenizden çıkarıldı.");
+    } else {
+      if (products.find((item) => item.id === product.id)) {
+        toast.warn("Bu ürün zaten favori listenizde var.");
+      } else {
+        dispatch(setProduct(product));
+        toast.success(`Ürün favori listesine eklendi.`);
+      }
     }
-
-    dispatch(setProduct(product));
   };

@@ -15,6 +15,7 @@ import { Link } from "react-router-dom";
 import { ProductType } from "../../types/product";
 import { useAppDispatch} from "../../store/hooks";
 import { setSepetProductController } from "../../store/slices/sepetSlice";
+import { setFavoriProductController } from "../../store/slices/favoriSlice";
 interface IProductProps {
   product: ProductType;
 }
@@ -35,6 +36,7 @@ const Product = (props:IProductProps) => {
 
   const favEkle = (e:React.MouseEvent<HTMLElement>) => {
     setIsFav(!isFav);
+    dispatch(setFavoriProductController(product, isFav));
     e.preventDefault();
   };
 
