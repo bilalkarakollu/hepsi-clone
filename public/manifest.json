@@ -28,6 +28,12 @@
       "type": "image/png"
     },
     {
+      "src": "maskable_icon.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
       "src": "https://static.hepsiburada.net/assets/sfstatic/Content/images/android-chrome-512x512-new.png",
       "sizes": "512x512",
       "type": "image/png"
