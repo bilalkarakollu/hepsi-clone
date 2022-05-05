@@ -1,7 +1,6 @@
 import React from 'react'
 import {
     BsBookmark,
-    BsHeart,
     BsBell,
     BsArrowLeftRight,
     BsStarFill,
@@ -23,6 +22,7 @@ import {
     StarContainer,
   } from "../../styled/ProductDetay.styled";
 import { ProductType } from '../../types/product';
+import ProductFavBtn from './ProductFavBtn';
 
 interface IProps {
     product: ProductType
@@ -66,9 +66,7 @@ const ProductRight = (props:IProps) => {
             <ButtonView product={product}/>
 
           <AddContainer>
-            <AddItemBtn>
-              <BsHeart /> Beğen
-            </AddItemBtn>
+            <ProductFavBtn product={product}/>
             <AddItemBtn>
               <BsBookmark /> Listeme Ekle
             </AddItemBtn>
