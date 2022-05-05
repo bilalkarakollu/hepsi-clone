@@ -44,7 +44,7 @@ export const setFavoriProductController =
 
     if (isFav) {
       dispatch(removeProduct(product));
-      toast.error("Ürün favori listenizden çıkarıldı.");
+      toast.warn("Ürün favori listenizden çıkarıldı.");
     } else {
       if (products.find((item) => item.id === product.id)) {
         toast.warn("Bu ürün zaten favori listenizde var.");
