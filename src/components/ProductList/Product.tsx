@@ -43,7 +43,7 @@ const Product = (props:IProductProps) => {
   return (
     <Card>
       <Link to={`/${product.id}`}>
-        <FavContainer isFav={isFav} onClick={favEkle}>
+        <FavContainer data-testid="prdouct-fav-btn" isFav={isFav} onClick={favEkle}>
           {isFav ? <IoHeart /> : <IoHeartOutline />}
         </FavContainer>
         <ImgContainer>
@@ -53,7 +53,7 @@ const Product = (props:IProductProps) => {
           <Title>{product.title}</Title>
           <Price>{product.price} TL</Price>
           <BtnContainer>
-            <Button isSepet={isSepet} onClick={sepeteEkle}>{isSepet ? 'Sepete Eklendi' : 'Sepete Ekle'}</Button>
+            <Button data-testid="sepetekle-btn" isSepet={isSepet} onClick={sepeteEkle}>{isSepet ? 'Sepete Eklendi' : 'Sepete Ekle'}</Button>
           </BtnContainer>
         </Body>
       </Link>
