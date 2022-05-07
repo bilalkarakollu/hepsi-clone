@@ -14,7 +14,7 @@ const FavBtn = () => {
 
   return (
     <Link to={'/favoriler'}>
-      <BtnWhite>
+      <BtnWhite data-testid="fav-btn">
         <BadgeContainer>
           <BsHeartFill />
           {urunAdet > 0 && <Badge>{urunAdet}</Badge>}
