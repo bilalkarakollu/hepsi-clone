@@ -1,49 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
   ProductOzellikTable,
   ProductOzellikTitle,
   Row,
 } from "../../styled/ProductDetay.styled";
-import axios from "axios";
 import ProductLeft from "./ProductLeft";
 import ProductRight from "./ProductRight";
 import { ProductType } from "../../types/product";
-import { useParams } from "react-router-dom";
 import Loading from "./Loading";
 
-const emptyProduct: ProductType = {
-  id: "",
-  title: "",
-  price: "",
-  description: "",
-  category: "",
-};
+interface IProps { 
+  isLoading: boolean;
+  product: ProductType;
+  error: string;
+}
 
-const ProductView = () => {
-  const { id } = useParams();
-
-  const [product, setProduct] = useState<ProductType>(emptyProduct);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string>("");
-
-  const getProduct = async () => {
-    try {
-      const { data } = await axios.get(
-        `https://computer-app-server.herokuapp.com/products/${id}`
-      );
-      setProduct(data);
-      setIsLoading(false);
-    } catch {
-      setError("Ürün getirilirken bir hata oluştu.");
-      setIsLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    getProduct();
-    window.scrollTo(0, 0);
-  }, []);
-
+const ProductView = (props:IProps) => {
+  
+  const { isLoading, product, error } = props;
+  
   if (isLoading) {
     return <Loading/>;
   }
@@ -121,4 +96,4 @@ const ProductView = () => {
   );
 };
 
-export default ProductView;
+export default React.memo(ProductView);
