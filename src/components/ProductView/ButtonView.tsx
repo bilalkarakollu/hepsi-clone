@@ -35,7 +35,7 @@ const ButtonView = (props:IProps) => {
       <ProductAdetButtons>
         <ProductAdetButton onClick={handleClickEksi}>-</ProductAdetButton>
         <ButtonsInputContainer>
-          <ProductAdetInput onChange={handleAdetChange} type="text" value={adet} />
+          <ProductAdetInput data-testid="product-adet-input" onChange={handleAdetChange} type="text" value={adet} />
           <span>Adet</span>
         </ButtonsInputContainer>
         <ProductAdetButton onClick={handleClickArtı}>+</ProductAdetButton>
