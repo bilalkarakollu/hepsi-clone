@@ -8,7 +8,7 @@ import { ThemeProvider } from 'styled-components';
 import { BrowserRouter } from 'react-router-dom';
 import { theme } from '../../../styled/theme';
 
-const productData = {
+const fakeProductData = {
     id: "1",
     title: "Macbook Pro",
     price: "500",
@@ -18,7 +18,7 @@ const productData = {
 
 describe("Product Test", () => {
     beforeEach(() => {
-        render(<Provider store={store}><BrowserRouter><ThemeProvider theme={theme}><Product product={productData} /></ThemeProvider></BrowserRouter></Provider>);
+        render(<Provider store={store}><BrowserRouter><ThemeProvider theme={theme}><Product product={fakeProductData} /></ThemeProvider></BrowserRouter></Provider>);
     })
 
     test("Sepete ekle buttonu var mı?", () => {
